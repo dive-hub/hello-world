@@ -7,6 +7,14 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
+          <div>
+            <Thumbnail video={video} />
+            <a href={video.url}>
+              <h3>{video.title}</h3>
+              <p>{video.description}</p>
+            </a>
+            <LikeButton video={video} />
+          </div>
           React Js Training whatsapp +254796566475 ASAP.
         </p>
         <a

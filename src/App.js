@@ -1,8 +1,13 @@
 import React from 'react';
-import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import VideoList from './components/VideoList';
+
+const videos = [
+  { id: 1, title: 'First video', description: 'Video description' },
+  { id: 2, title: 'Second video', description: 'Video description' },
+  { id: 3, title: 'Third video', description: 'Video description' },
+];
 
 function App() {
   return (

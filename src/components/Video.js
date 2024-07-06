@@ -17,11 +17,20 @@ const Video = ({ video }) => {
     setLiked(!liked);
   };
 
+  // Extract the YouTube video ID
+  let videoId = video.link.split('v=')[1];
+  const ampersandPosition = videoId.indexOf('&');
+  if (ampersandPosition !== -1) {
+    videoId = videoId.substring(0, ampersandPosition);
+  }
+
+  const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/0.jpg`;
+
   return (
     <div className="video-item">
-      <div className="video-thumbnail">
-        <button className="play-button">&#9658;</button>
-      </div>
+      <a href={video.link} target="_blank" rel="noopener noreferrer" className="video-thumbnail">
+        <img src={thumbnailUrl} alt={`${video.title} thumbnail`} className="thumbnail-image" />
+      </a>
       <div className="video-details">
         <h3>{video.title}</h3>
         <p>{video.description}</p>
